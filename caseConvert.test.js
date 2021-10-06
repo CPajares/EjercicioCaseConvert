@@ -1,11 +1,25 @@
 function caseConvert(string) {
   if (string !== string.toLowerCase()) {
-    return "The text contains capital letters";
+    console.log("The text contains capital letters");
   }
 
   if (string.includes("_")) {
     console.log("The text contains underscores");
   }
+
+  if (string.includes(" ")) {
+    console.log("is mandatory kebab-case");
+  }
+
+  const resultado = [];
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === "-") {
+      string[i + 1].toUpperCase();
+    } else {
+      resultado.push(string[i]);
+    }
+  }
+  console.log(resultado.split());
 }
 
 describe("function caseConvert, that check if it´s kebab-case and return lowerCamelCase", () => {
